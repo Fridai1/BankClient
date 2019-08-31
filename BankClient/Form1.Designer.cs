@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Deopsit = new System.Windows.Forms.Button();
+            this.Withdraw = new System.Windows.Forms.Button();
+            this.AmountValue = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
             this.FundsLabel = new System.Windows.Forms.Label();
             this.FundsValue = new System.Windows.Forms.Label();
@@ -40,44 +40,51 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(884, 22);
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(442, 11);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(468, 936);
+            this.listView1.Size = new System.Drawing.Size(236, 489);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // button1
+            // Deopsit
             // 
-            this.button1.Location = new System.Drawing.Point(92, 243);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 73);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Deposit";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Deopsit.Location = new System.Drawing.Point(46, 126);
+            this.Deopsit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Deopsit.Name = "Deopsit";
+            this.Deopsit.Size = new System.Drawing.Size(83, 38);
+            this.Deopsit.TabIndex = 1;
+            this.Deopsit.Text = "Deposit";
+            this.Deopsit.UseVisualStyleBackColor = true;
+            this.Deopsit.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // Withdraw
             // 
-            this.button2.Location = new System.Drawing.Point(264, 243);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(166, 73);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Withdraw";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Withdraw.Location = new System.Drawing.Point(132, 126);
+            this.Withdraw.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Withdraw.Name = "Withdraw";
+            this.Withdraw.Size = new System.Drawing.Size(83, 38);
+            this.Withdraw.TabIndex = 2;
+            this.Withdraw.Text = "Withdraw";
+            this.Withdraw.UseVisualStyleBackColor = true;
+            this.Withdraw.Click += new System.EventHandler(this.Withdraw_Click);
             // 
-            // textBox1
+            // AmountValue
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 206);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 31);
-            this.textBox1.TabIndex = 3;
+            this.AmountValue.Location = new System.Drawing.Point(46, 107);
+            this.AmountValue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AmountValue.Name = "AmountValue";
+            this.AmountValue.Size = new System.Drawing.Size(126, 20);
+            this.AmountValue.TabIndex = 3;
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(87, 51);
+            this.labelName.Location = new System.Drawing.Point(44, 27);
+            this.labelName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(65, 25);
+            this.labelName.Size = new System.Drawing.Size(33, 13);
             this.labelName.TabIndex = 4;
             this.labelName.Text = "name";
             this.labelName.Click += new System.EventHandler(this.label1_Click);
@@ -85,43 +92,47 @@
             // FundsLabel
             // 
             this.FundsLabel.AutoSize = true;
-            this.FundsLabel.Location = new System.Drawing.Point(87, 105);
+            this.FundsLabel.Location = new System.Drawing.Point(44, 55);
+            this.FundsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FundsLabel.Name = "FundsLabel";
-            this.FundsLabel.Size = new System.Drawing.Size(72, 25);
+            this.FundsLabel.Size = new System.Drawing.Size(36, 13);
             this.FundsLabel.TabIndex = 5;
             this.FundsLabel.Text = "Funds";
             // 
             // FundsValue
             // 
             this.FundsValue.AutoSize = true;
-            this.FundsValue.Location = new System.Drawing.Point(253, 105);
+            this.FundsValue.Location = new System.Drawing.Point(126, 55);
+            this.FundsValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FundsValue.Name = "FundsValue";
-            this.FundsValue.Size = new System.Drawing.Size(47, 25);
+            this.FundsValue.Size = new System.Drawing.Size(27, 13);
             this.FundsValue.TabIndex = 6;
             this.FundsValue.Text = "N/A";
             // 
             // NameValue
             // 
             this.NameValue.AutoSize = true;
-            this.NameValue.Location = new System.Drawing.Point(253, 51);
+            this.NameValue.Location = new System.Drawing.Point(126, 27);
+            this.NameValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NameValue.Name = "NameValue";
-            this.NameValue.Size = new System.Drawing.Size(47, 25);
+            this.NameValue.Size = new System.Drawing.Size(27, 13);
             this.NameValue.TabIndex = 7;
             this.NameValue.Text = "N/A";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1414, 997);
+            this.ClientSize = new System.Drawing.Size(707, 518);
             this.Controls.Add(this.NameValue);
             this.Controls.Add(this.FundsValue);
             this.Controls.Add(this.FundsLabel);
             this.Controls.Add(this.labelName);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.AmountValue);
+            this.Controls.Add(this.Withdraw);
+            this.Controls.Add(this.Deopsit);
             this.Controls.Add(this.listView1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -132,9 +143,9 @@
         #endregion
 
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button Deopsit;
+        private System.Windows.Forms.Button Withdraw;
+        private System.Windows.Forms.TextBox AmountValue;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label FundsLabel;
         private System.Windows.Forms.Label FundsValue;

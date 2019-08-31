@@ -15,10 +15,12 @@ namespace BankClient
     public partial class Form1 : Form
     {
         //Connection conn = new Connection();
+        Connection conn = new Connection();
+        double amount = 0;
         public Form1()
         {
             InitializeComponent();
-            var ClientRaw = File.ReadAllText("C:\\Users\\nikol\\Documents\\Code\\BankClient\\BankClient\\Clients.txt");
+            var ClientRaw = File.ReadAllText("Clients.txt");
             List<Customer> Clients = (List<Customer>) JsonConvert.DeserializeObject<IList<Customer>>(ClientRaw);
             listView1.ItemSelectionChanged += listView1_ItemSelectionChanged;
             foreach (var c in Clients)
@@ -35,6 +37,9 @@ namespace BankClient
 
         private void button1_Click(object sender, EventArgs e)
         {
+            amount = double.Parse(AmountValue.Text);
+            AdjustFunds();
+            AmountValue.Text = "";
 
         }
 
@@ -45,22 +50,40 @@ namespace BankClient
 
         private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            double amount = 0;
-            Connection conn = new Connection();
+
+            amount = 0;
+
+
             if (e.IsSelected)
             {
-               Customer c =(Customer) listView1.SelectedItems[0].Tag;
-               if (textBox1.Text != "")
-               {
-                   amount = Double.Parse(textBox1.Text);
+
+                Customer c = (Customer)listView1.SelectedItems[0].Tag;
+                if (AmountValue.Text != "")
+                {
+                    amount = Double.Parse(AmountValue.Text);
                 }
 
-               NameValue.Text = c.Name;
-               conn.StartConnection(c.Id, amount);
+                NameValue.Text = c.Name;
+                FundsValue.Text = conn.GetFunds(c.Id, amount);
+                
             }
         }
-        
 
-        
+        private void Withdraw_Click(object sender, EventArgs e)
+        {
+            amount = double.Parse(AmountValue.Text);
+            amount = -amount;
+            AdjustFunds();
+            AmountValue.Text = "";
+        }
+
+        public void AdjustFunds()
+        {
+            // optimer ved at gøre customer til instancefield..
+            Customer c = (Customer)listView1.SelectedItems[0].Tag;
+
+            FundsValue.Text = conn.GetFunds(c.Id, amount);
+
+        }
     }
 }
