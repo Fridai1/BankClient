@@ -14,7 +14,7 @@ namespace BankClient
 {
     public partial class Form1 : Form
     {
-        //Connection conn = new Connection();
+        
         Connection conn = new Connection();
         double amount = 0;
         public Form1()
@@ -50,7 +50,6 @@ namespace BankClient
 
         private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-
             amount = 0;
 
 
@@ -71,6 +70,7 @@ namespace BankClient
 
         private void Withdraw_Click(object sender, EventArgs e)
         {
+            
             amount = double.Parse(AmountValue.Text);
             amount = -amount;
             AdjustFunds();
@@ -83,7 +83,8 @@ namespace BankClient
             Customer c = (Customer)listView1.SelectedItems[0].Tag;
 
             FundsValue.Text = conn.GetFunds(c.Id, amount);
-
         }
+
+        
     }
 }
