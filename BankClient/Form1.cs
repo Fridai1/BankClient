@@ -43,10 +43,7 @@ namespace BankClient
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
@@ -57,10 +54,7 @@ namespace BankClient
             {
 
                 Customer c = (Customer)listView1.SelectedItems[0].Tag;
-                if (AmountValue.Text != "")
-                {
-                    amount = Double.Parse(AmountValue.Text);
-                }
+                
 
                 NameValue.Text = c.Name;
                 FundsValue.Text = conn.GetFunds(c.Id, amount);

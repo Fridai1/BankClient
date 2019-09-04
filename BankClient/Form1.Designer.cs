@@ -87,7 +87,6 @@
             this.labelName.Size = new System.Drawing.Size(33, 13);
             this.labelName.TabIndex = 4;
             this.labelName.Text = "name";
-            this.labelName.Click += new System.EventHandler(this.label1_Click);
             // 
             // FundsLabel
             // 
